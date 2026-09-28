@@ -112,6 +112,7 @@ margin:4px;
 <div class="container">
 
 <div class="card">
+
 <h1>🍽 Chef Semanal Gus</h1>
 
 <button onclick="generarMenu()">
@@ -125,9 +126,11 @@ Reiniciar
 </div>
 
 <div class="card">
+
 <h2>🏠 Despensa</h2>
 
-<input id="ingredienteInput"
+<input
+id="ingredienteInput"
 placeholder="Ejemplo: Huevos">
 
 <button onclick="agregarIngrediente()">
@@ -172,18 +175,6 @@ Añadir ingrediente
 
 let recetas = [];
 
-async function cargarRecetas() {
-    try {
-        const response = await fetch('recetas.json');
-        recetas = await response.json();
-
-        console.log("Recetas cargadas:", recetas.length);
-
-    } catch (error) {
-        console.error('Error cargando recetas:', error);
-    }
-}
-
 const dias = [
 "Lunes",
 "Martes",
@@ -193,6 +184,25 @@ const dias = [
 "Sábado",
 "Domingo"
 ];
+
+async function cargarRecetas() {
+
+    try {
+
+        const response = await fetch("./recetas.json");
+
+        recetas = await response.json();
+
+        console.log("Recetas cargadas:", recetas.length);
+
+    } catch(error) {
+
+        console.error(error);
+
+        alert("No se pudo cargar recetas.json");
+
+    }
+}
 
 let despensa =
 JSON.parse(localStorage.getItem("despensa")) || [];
@@ -213,10 +223,10 @@ document.getElementById("despensa");
 
 zona.innerHTML="";
 
-despensa.forEach(i=>{
+despensa.forEach(item=>{
 
 zona.innerHTML +=
-`<span class="tag">${i}</span>`;
+`<span class="tag">${item}</span>`;
 
 });
 
@@ -244,23 +254,53 @@ input.value="";
 
 function generarMenu(){
 
-let html="";
+if(recetas.length === 0){
 
-let ingredientesCompra=[];
+alert(
+"Las recetas aún no se han cargado. Recarga la página."
+);
+
+return;
+
+}
+
+const comidas =
+recetas.filter(r => r.tipo === "comida");
+
+const cenas =
+recetas.filter(r => r.tipo === "cena");
+
+if(comidas.length === 0){
+
+alert("No existen recetas de tipo comida");
+
+return;
+
+}
+
+if(cenas.length === 0){
+
+alert("No existen recetas de tipo cena");
+
+return;
+
+}
+
+let html = "";
+
+let listaCompra = [];
 
 for(let i=0;i<7;i++){
 
 const comida =
-recetas[
-Math.floor(
-Math.random()*recetas.length
-)];
+comidas[
+Math.floor(Math.random()*comidas.length)
+];
 
 const cena =
-recetas[
-Math.floor(
-Math.random()*recetas.length
-)];
+cenas[
+Math.floor(Math.random()*cenas.length)
+];
 
 html += `
 <tr>
@@ -270,26 +310,49 @@ html += `
 </tr>
 `;
 
-ingredientesCompra.push(
-...comida.ingredientes,
-...cena.ingredientes
-);
+if(comida.ingredientes){
+
+listaCompra.push(...comida.ingredientes);
 
 }
 
-document.getElementById("menu")
-.innerHTML = html;
+if(cena.ingredientes){
 
-const filtrados =
-[...new Set(ingredientesCompra)]
-.filter(x =>
-!despensa.includes(x)
+listaCompra.push(...cena.ingredientes);
+
+}
+
+}
+
+document.getElementById("menu").innerHTML = html;
+
+const compraFiltrada =
+listaCompra.filter(ing =>
+
+!despensa.some(
+d => d.toLowerCase() === ing.nombre.toLowerCase()
+)
+
 );
 
-document.getElementById("compra")
-.innerHTML =
-filtrados
-.map(i=>`<li>✅ ${i}</li>`)
+const ingredientesUnicos =
+[...new Map(
+compraFiltrada.map(
+item => [item.nombre,item]
+)
+).values()];
+
+document.getElementById("compra").innerHTML =
+
+ingredientesUnicos
+.sort((a,b)=>
+a.nombre.localeCompare(b.nombre)
+)
+.map(item =>
+
+`<li>✅ ${item.nombre}</li>`
+
+)
 .join("");
 
 localStorage.setItem(
@@ -307,7 +370,9 @@ location.reload();
 
 }
 
-window.onload = ()=>{
+window.onload = async ()=>{
+
+await cargarRecetas();
 
 renderDespensa();
 
@@ -317,16 +382,16 @@ localStorage.getItem("ultimoMenu");
 if(menuGuardado){
 
 document.getElementById("menu")
-.innerHTML=menuGuardado;
+.innerHTML = menuGuardado;
 
 }
 
 };
 
-if('serviceWorker' in navigator){
+if("serviceWorker" in navigator){
 
 navigator.serviceWorker.register(
-'service-worker.js'
+"./service-worker.js"
 );
 
 }
