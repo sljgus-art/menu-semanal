@@ -170,59 +170,19 @@ Añadir ingrediente
 
 <script>
 
-const recetas = [
+let recetas = [];
 
-{
-nombre:"Pollo con arroz",
-ingredientes:["Pollo","Arroz"]
-},
+async function cargarRecetas() {
+    try {
+        const response = await fetch('recetas.json');
+        recetas = await response.json();
 
-{
-nombre:"Lentejas",
-ingredientes:["Lentejas","Zanahoria","Cebolla"]
-},
+        console.log("Recetas cargadas:", recetas.length);
 
-{
-nombre:"Salmón con verduras",
-ingredientes:["Salmón","Brócoli","Zanahoria"]
-},
-
-{
-nombre:"Tortilla de patata",
-ingredientes:["Huevos","Patatas"]
-},
-
-{
-nombre:"Garbanzos",
-ingredientes:["Garbanzos","Cebolla"]
-},
-
-{
-nombre:"Ensalada completa",
-ingredientes:["Lechuga","Tomate","Atún"]
-},
-
-{
-nombre:"Pasta boloñesa",
-ingredientes:["Macarrones","Carne picada","Tomate"]
-},
-
-{
-nombre:"Merluza al horno",
-ingredientes:["Merluza","Patatas"]
-},
-
-{
-nombre:"Pechuga plancha",
-ingredientes:["Pollo","Lechuga"]
-},
-
-{
-nombre:"Revuelto de verduras",
-ingredientes:["Huevos","Calabacín","Cebolla"]
+    } catch (error) {
+        console.error('Error cargando recetas:', error);
+    }
 }
-
-];
 
 const dias = [
 "Lunes",
