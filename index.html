@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chef Semanal Gus</title>
+
+manifest.json
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+padding:20px;
+margin:0;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+button{
+background:#28a745;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#218838;
+}
+
+h1,h2{
+text-align:center;
+}
+
+ul{
+padding-left:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Chef Semanal Gus</h1>
+
+<button onclick="generarMenu()">
+Generar menú semanal
+</button>
+
+<h2>Menú</h2>
+
+<div id="menu"></div>
+
+<h2>Lista de la compra</h2>
+
+<ul id="compra"></ul>
+
+</div>
+
+<script>
+
+const comidas=[
+"Pollo con arroz",
+"Lentejas",
+"Macarrones boloñesa",
+"Salmón con verduras",
+"Tortilla de patata",
+"Ensalada completa",
+"Garbanzos"
+];
+
+const ingredientes={
+"Pollo con arroz":["Pollo","Arroz"],
+"Lentejas":["Lentejas","Zanahoria"],
+"Macarrones boloñesa":["Macarrones","Carne picada"],
+"Salmón con verduras":["Salmón","Verduras"],
+"Tortilla de patata":["Huevos","Patatas"],
+"Ensalada completa":["Lechuga","Tomate","Atún"],
+"Garbanzos":["Garbanzos","Cebolla"]
+};
+
+function generarMenu(){
+
+let menu="<ul>";
+let compra=[];
+
+for(let i=0;i<7;i++){
+
+const plato=
+comidas[Math.floor(Math.random()*comidas.length)];
+
+menu+=`<li>${plato}</li>`;
+
+compra.push(...ingredientes[plato]);
+
+}
+
+menu+="</ul>";
+
+document.getElementById("menu").innerHTML=menu;
+
+const unicos=[...new Set(compra)];
+
+document.getElementById("compra").innerHTML=
+unicos.map(x=>`<li>${x}</li>`).join("");
+
+}
+
+</script>
+
+</body>
+</html>
