@@ -1,7 +1,7 @@
 {
   "name": "Chef Semanal Gus",
   "short_name": "ChefGus",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "/menu-semanal/",
   "display": "standalone",
   "background_color": "#ffffff",
