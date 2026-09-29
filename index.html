@@ -194,6 +194,12 @@ Añadir artículo
 
 let recetas = [];
 
+let articulosManual =
+JSON.parse(localStorage.getItem("articulosManual"))
+|| [];
+
+let listaCompraActual = [];
+
 const dias = [
 "Lunes",
 "Martes",
