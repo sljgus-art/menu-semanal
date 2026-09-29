@@ -1,6 +1,8 @@
 {
+  "id": "./",
   "name": "Chef Semanal Gus",
   "short_name": "ChefGus",
+  "description": "Planificador de menús semanales y lista de la compra para 2 personas.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
