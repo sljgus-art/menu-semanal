@@ -1,179 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Chef Semanal Gus</title>
-
-<meta name="theme-color" content="#2e7d32">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f4f6f8;
-padding:15px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-margin-bottom:20px;
-}
-
-h1{
-text-align:center;
-margin-bottom:20px;
-color:#2e7d32;
-}
-
-h2{
-margin-bottom:10px;
-color:#333;
-}
-
-button{
-background:#2e7d32;
-color:white;
-border:none;
-padding:12px 18px;
-border-radius:8px;
-cursor:pointer;
-font-size:16px;
-margin:5px;
-}
-
-button:hover{
-background:#1b5e20;
-}
-
-input{
-width:100%;
-padding:10px;
-margin-top:10px;
-border:1px solid #ccc;
-border-radius:6px;
-}
-
-ul{
-list-style:none;
-padding-left:0;
-}
-
-li{
-padding:6px 0;
-border-bottom:1px solid #eee;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-}
-
-th,td{
-padding:10px;
-border-bottom:1px solid #ddd;
-text-align:left;
-}
-
-th{
-background:#e8f5e9;
-}
-
-.tag{
-display:inline-block;
-background:#e8f5e9;
-padding:6px 10px;
-border-radius:20px;
-margin:4px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="card">
-
-<h1>🍽 Chef Semanal Gus</h1>
-
-<button onclick="generarMenu()">
-Generar semana
-</button>
-
-<button onclick="limpiarTodo()">
-Reiniciar
-</button>
-
-</div>
-
-<div class="card">
-
-<h2>🏠 Despensa</h2>
-
-<input
-id="ingredienteInput"
-placeholder="Ejemplo: Huevos">
-
-<button onclick="agregarIngrediente()">
-Añadir ingrediente
-</button>
-
-<div id="despensa"></div>
-
-</div>
-
-<div class="card">
-
-<h2>📅 Menú semanal</h2>
-
-<table>
-
-<thead>
-<tr>
-<th>Día</th>
-<th>Comida</th>
-<th>Cena</th>
-</tr>
-</thead>
-
-<tbody id="menu"></tbody>
-
-</table>
-
-</div>
-
-<div class="card">
-
-<h2>🛒 Lista de compra</h2>
-
-<ul id="compra"></ul>
-
-</div>
-
-</div>
-
 <script>
 
 let recetas = [];
+
+let comprados =
+JSON.parse(localStorage.getItem("comprados")) || [];
+
+let despensa =
+JSON.parse(localStorage.getItem("despensa")) || [];
 
 const dias = [
 "Lunes",
@@ -191,6 +24,10 @@ async function cargarRecetas() {
 
         const response = await fetch("./recetas.json");
 
+        if (!response.ok) {
+            throw new Error("Error HTTP " + response.status);
+        }
+
         recetas = await response.json();
 
         console.log("Recetas cargadas:", recetas.length);
@@ -202,201 +39,192 @@ async function cargarRecetas() {
         alert("No se pudo cargar recetas.json");
 
     }
-}
 
-let despensa =
-JSON.parse(localStorage.getItem("despensa")) || [];
+}
 
 function guardarDespensa(){
 
-localStorage.setItem(
-"despensa",
-JSON.stringify(despensa)
-);
+    localStorage.setItem(
+        "despensa",
+        JSON.stringify(despensa)
+    );
 
 }
 
 function renderDespensa(){
 
-const zona =
-document.getElementById("despensa");
+    const zona =
+    document.getElementById("despensa");
 
-zona.innerHTML="";
+    zona.innerHTML = "";
 
-despensa.forEach(item=>{
+    despensa.forEach((item,index)=>{
 
-zona.innerHTML +=
-`<span class="tag">${item}</span>`;
+        zona.innerHTML += `
+        <span class="tag">
+            ${item}
+            <button
+                onclick="eliminarIngrediente(${index})"
+                style="
+                    margin-left:6px;
+                    background:#d32f2f;
+                    padding:2px 6px;
+                    font-size:12px;
+                    border:none;
+                    border-radius:4px;
+                    color:white;
+                    cursor:pointer;
+                ">
+                ❌
+            </button>
+        </span>
+        `;
 
-});
+    });
 
 }
 
 function agregarIngrediente(){
 
-const input =
-document.getElementById("ingredienteInput");
+    const input =
+    document.getElementById("ingredienteInput");
 
-const valor =
-input.value.trim();
+    const valor =
+    input.value.trim();
 
-if(!valor) return;
+    if(!valor) return;
 
-despensa.push(valor);
+    if(!despensa.includes(valor)){
 
-guardarDespensa();
+        despensa.push(valor);
 
-renderDespensa();
+        guardarDespensa();
 
-input.value="";
+        renderDespensa();
+
+    }
+
+    input.value = "";
+
+}
+
+function eliminarIngrediente(index){
+
+    despensa.splice(index,1);
+
+    guardarDespensa();
+
+    renderDespensa();
+
+}
+
+function toggleComprado(nombre){
+
+    if(comprados.includes(nombre)){
+
+        comprados =
+        comprados.filter(
+            x => x !== nombre
+        );
+
+    }else{
+
+        comprados.push(nombre);
+
+    }
+
+    localStorage.setItem(
+        "comprados",
+        JSON.stringify(comprados)
+    );
 
 }
 
 function generarMenu(){
 
-if(recetas.length === 0){
+    if(recetas.length === 0){
 
-alert(
-"Las recetas aún no se han cargado. Recarga la página."
-);
+        alert(
+            "Las recetas aún no se han cargado."
+        );
 
-return;
+        return;
 
-}
+    }
 
-const comidas =
-recetas.filter(r => r.tipo === "comida");
+    const comidas =
+    recetas.filter(
+        r => r.tipo === "comida"
+    );
 
-const cenas =
-recetas.filter(r => r.tipo === "cena");
+    const cenas =
+    recetas.filter(
+        r => r.tipo === "cena"
+    );
 
-if(comidas.length === 0){
+    if(comidas.length < 7 || cenas.length < 7){
 
-alert("No existen recetas de tipo comida");
+        alert(
+            "Necesitas al menos 7 comidas y 7 cenas."
+        );
 
-return;
+        return;
 
-}
+    }
 
-if(cenas.length === 0){
+    let html = "";
+    let listaCompra = [];
 
-alert("No existen recetas de tipo cena");
+    const comidasDisponibles = [...comidas];
+    const cenasDisponibles = [...cenas];
 
-return;
+    for(let i=0;i<7;i++){
 
-}
+        const comida =
+        comidasDisponibles.splice(
+            Math.floor(
+                Math.random() *
+                comidasDisponibles.length
+            ),
+            1
+        )[0];
 
-let html = "";
+        const cena =
+        cenasDisponibles.splice(
+            Math.floor(
+                Math.random() *
+                cenasDisponibles.length
+            ),
+            1
+        )[0];
 
-let listaCompra = [];
+        html += `
+        <tr>
+            <td>${dias[i]}</td>
+            <td>${comida.nombre}</td>
+            <td>${cena.nombre}</td>
+        </tr>
+        `;
 
-for(let i=0;i<7;i++){
+        if(comida.ingredientes){
+            listaCompra.push(...comida.ingredientes);
+        }
 
-const comida =
-comidas[
-Math.floor(Math.random()*comidas.length)
-];
+        if(cena.ingredientes){
+            listaCompra.push(...cena.ingredientes);
+        }
 
-const cena =
-cenas[
-Math.floor(Math.random()*cenas.length)
-];
+    }
 
-html += `
-<tr>
-<td>${dias[i]}</td>
-<td>${comida.nombre}</td>
-<td>${cena.nombre}</td>
-</tr>
-`;
+    document.getElementById("menu").innerHTML = html;
 
-if(comida.ingredientes){
+    const compraFiltrada =
+    listaCompra.filter(ing =>
 
-listaCompra.push(...comida.ingredientes);
+        !despensa.some(
+            d =>
+            d.toLowerCase() ===
+            ing.nombre.toLowerCase()
+        )
 
-}
-
-if(cena.ingredientes){
-
-listaCompra.push(...cena.ingredientes);
-
-}
-
-}
-
-document.getElementById("menu").innerHTML = html;
-
-const compraFiltrada =
-listaCompra.filter(ing =>
-
-!despensa.some(
-d => d.toLowerCase() === ing.nombre.toLowerCase()
-)
-
-);
-
-const ingredientesUnicos =
-[...new Map(
-compraFiltrada.map(
-item => [item.nombre,item]
-)
-).values()];
-
-document.getElementById("compra").innerHTML =
-
-ingredientesUnicos
-.sort((a,b)=>
-a.nombre.localeCompare(b.nombre)
-)
-.map(item =>
-
-`<li>✅ ${item.nombre}</li>`
-
-)
-.join("");
-
-localStorage.setItem(
-"ultimoMenu",
-html
-);
-
-}
-
-function limpiarTodo(){
-
-localStorage.clear();
-
-location.reload();
-
-}
-
-window.onload = async ()=>{
-
-await cargarRecetas();
-
-renderDespensa();
-
-const menuGuardado =
-localStorage.getItem("ultimoMenu");
-
-if(menuGuardado){
-
-document.getElementById("menu")
-.innerHTML = menuGuardado;
-
-}
-
-};
-
-if("serviceWorker" in navigator){
-
-navigator.serviceWorker.register(
-"./service-worker.js"
-);
-
-}
-
-</script>
-
-</body>
-</html>
+   
