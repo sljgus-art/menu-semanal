@@ -109,7 +109,6 @@
 {"nombre":"Carne picada","cantidad":300,"unidad":"g"}
 ]
 },
-
 {
 "id":11,
 "nombre":"Pollo al curry",
@@ -165,7 +164,6 @@
 {"nombre":"Tomate","cantidad":300,"unidad":"g"}
 ]
 },
-
 {
 "id":16,
 "nombre":"Cocido madrileño",
@@ -220,8 +218,7 @@
 {"nombre":"Salmón","cantidad":400,"unidad":"g"},
 {"nombre":"Verduras","cantidad":300,"unidad":"g"}
 ]
-}
-]
+},
 {
 "id":101,
 "nombre":"Tortilla francesa",
@@ -275,3 +272,4 @@
 {"nombre":"Jamón york","cantidad":4,"unidad":"lonchas"}
 ]
 }
+]
