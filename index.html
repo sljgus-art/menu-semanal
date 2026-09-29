@@ -9,7 +9,9 @@
  
 <meta name="theme-color" content="#2e7d32">
 <link rel="manifest" href="./manifest.json">    
- 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdfript>
+    
 <style>
 
 *{
@@ -253,6 +255,106 @@ input.value="";
 
 }
 
+function agregarArticuloManual(){
+
+const input =
+document.getElementById("articuloManual");
+
+const valor =
+input.value.trim();
+
+if(!valor) return;
+
+articulosManual.push({
+nombre: valor
+});
+
+localStorage.setItem(
+"articulosManual",
+JSON.stringify(articulosManual)
+);
+
+input.value="";
+
+actualizarListaCompra();
+}
+
+function actualizarListaCompra(){
+
+const completa = [
+...listaCompraActual,
+...articulosManual
+];
+
+const ingredientesUnicos =
+[...new Map(
+completa.map(
+item => [item.nombre.toLowerCase(), item]
+)
+).values()];
+
+document.getElementById("compra").innerHTML =
+
+ingredientesUnicos
+.sort((a,b)=>
+a.nombre.localeCompare(b.nombre)
+)
+.map(item =>
+
+`<li>✅ ${item.nombre}</li>`
+
+)
+.join("");
+}
+
+async function descargarPDF(){
+
+if(typeof window.jspdf === "undefined"){
+
+alert("Falta la librería jsPDF");
+
+return;
+}
+
+const { jsPDF } = window.jspdf;
+
+const doc = new jsPDF();
+
+doc.setFontSize(18);
+
+doc.text(
+"Lista de la compra - Chef Semanal Gus",
+10,
+15
+);
+
+let y = 30;
+
+document
+.querySelectorAll("#compra li")
+.forEach(item => {
+
+doc.text(
+item.textContent,
+10,
+y
+);
+
+y += 8;
+
+if(y > 280){
+
+doc.addPage();
+
+y = 20;
+
+}
+
+});
+
+doc.save("lista-compra.pdf");
+}    
+
 function generarMenu(){
 
 if(recetas.length === 0){
@@ -343,18 +445,10 @@ item => [item.nombre,item]
 )
 ).values()];
 
-document.getElementById("compra").innerHTML =
+listaCompraActual =
+ingredientesUnicos;
 
-ingredientesUnicos
-.sort((a,b)=>
-a.nombre.localeCompare(b.nombre)
-)
-.map(item =>
-
-`<li>✅ ${item.nombre}</li>`
-
-)
-.join("");
+actualizarListaCompra();
 
 localStorage.setItem(
 "ultimoMenu",
@@ -362,6 +456,7 @@ html
 );
 
 }
+
 
 function limpiarTodo(){
 
