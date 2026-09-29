@@ -7,7 +7,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Pechuga de pollo","cantidad":500,"unidad":"g"},
-{"nombre":"Arroz","cantidad":200,"unidad":"g"}
+{"nombre":"Arroz","cantidad":200,"unidad":"g"},
+{"nombre":"Cebolla","cantidad":1,"unidad":"ud"}
 ]
 },
 {
@@ -18,7 +19,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Lentejas","cantidad":300,"unidad":"g"},
-{"nombre":"Zanahoria","cantidad":2,"unidad":"ud"}
+{"nombre":"Zanahoria","cantidad":2,"unidad":"ud"},
+{"nombre":"Patata","cantidad":2,"unidad":"ud"}
 ]
 },
 {
@@ -29,7 +31,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Macarrones","cantidad":250,"unidad":"g"},
-{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+{"nombre":"Carne picada","cantidad":300,"unidad":"g"},
+{"nombre":"Tomate triturado","cantidad":300,"unidad":"g"}
 ]
 },
 {
@@ -40,7 +43,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Arroz","cantidad":250,"unidad":"g"},
-{"nombre":"Pollo","cantidad":200,"unidad":"g"}
+{"nombre":"Pollo","cantidad":200,"unidad":"g"},
+{"nombre":"Gambas","cantidad":150,"unidad":"g"}
 ]
 },
 {
@@ -73,7 +77,7 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Garbanzos","cantidad":300,"unidad":"g"},
-{"nombre":"Espinacas","cantidad":250,"unidad":"g"}
+{"nombre":"Espinacas","cantidad":300,"unidad":"g"}
 ]
 },
 {
@@ -84,6 +88,7 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Arroz","cantidad":250,"unidad":"g"},
+{"nombre":"Jamón york","cantidad":150,"unidad":"g"},
 {"nombre":"Guisantes","cantidad":100,"unidad":"g"}
 ]
 },
@@ -95,7 +100,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Ternera","cantidad":500,"unidad":"g"},
-{"nombre":"Patatas","cantidad":400,"unidad":"g"}
+{"nombre":"Patatas","cantidad":400,"unidad":"g"},
+{"nombre":"Zanahoria","cantidad":2,"unidad":"ud"}
 ]
 },
 {
@@ -105,8 +111,9 @@
 "tipo":"comida",
 "raciones":2,
 "ingredientes":[
-{"nombre":"Placas lasaña","cantidad":12,"unidad":"ud"},
-{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+{"nombre":"Placas de lasaña","cantidad":12,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":350,"unidad":"g"},
+{"nombre":"Tomate triturado","cantidad":300,"unidad":"g"}
 ]
 },
 {
@@ -117,12 +124,13 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Pollo","cantidad":500,"unidad":"g"},
-{"nombre":"Curry","cantidad":20,"unidad":"g"}
+{"nombre":"Curry","cantidad":20,"unidad":"g"},
+{"nombre":"Arroz","cantidad":200,"unidad":"g"}
 ]
 },
 {
 "id":12,
-"nombre":"Pollo al horno",
+"nombre":"Pollo al horno con patatas",
 "categoria":"carne",
 "tipo":"comida",
 "raciones":2,
@@ -139,7 +147,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Arroz","cantidad":250,"unidad":"g"},
-{"nombre":"Conejo","cantidad":250,"unidad":"g"}
+{"nombre":"Conejo","cantidad":250,"unidad":"g"},
+{"nombre":"Judías verdes","cantidad":150,"unidad":"g"}
 ]
 },
 {
@@ -150,7 +159,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Fideos","cantidad":250,"unidad":"g"},
-{"nombre":"Calamares","cantidad":250,"unidad":"g"}
+{"nombre":"Calamares","cantidad":250,"unidad":"g"},
+{"nombre":"Gambas","cantidad":150,"unidad":"g"}
 ]
 },
 {
@@ -161,7 +171,7 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Bacalao","cantidad":400,"unidad":"g"},
-{"nombre":"Tomate","cantidad":300,"unidad":"g"}
+{"nombre":"Tomate triturado","cantidad":300,"unidad":"g"}
 ]
 },
 {
@@ -172,7 +182,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Garbanzos","cantidad":300,"unidad":"g"},
-{"nombre":"Chorizo","cantidad":150,"unidad":"g"}
+{"nombre":"Chorizo","cantidad":150,"unidad":"g"},
+{"nombre":"Morcilla","cantidad":100,"unidad":"g"}
 ]
 },
 {
@@ -205,7 +216,8 @@
 "raciones":2,
 "ingredientes":[
 {"nombre":"Espaguetis","cantidad":250,"unidad":"g"},
-{"nombre":"Bacon","cantidad":150,"unidad":"g"}
+{"nombre":"Bacon","cantidad":150,"unidad":"g"},
+{"nombre":"Nata","cantidad":200,"unidad":"ml"}
 ]
 },
 {
@@ -217,6 +229,337 @@
 "ingredientes":[
 {"nombre":"Salmón","cantidad":400,"unidad":"g"},
 {"nombre":"Verduras","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":21,
+"nombre":"Solomillo con patatas",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Solomillo","cantidad":500,"unidad":"g"},
+{"nombre":"Patatas","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":22,
+"nombre":"Arroz negro",
+"categoria":"arroz",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Arroz","cantidad":250,"unidad":"g"},
+{"nombre":"Calamares","cantidad":250,"unidad":"g"}
+]
+},
+{
+"id":23,
+"nombre":"Marmitako",
+"categoria":"pescado",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Atún","cantidad":400,"unidad":"g"},
+{"nombre":"Patatas","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":24,
+"nombre":"Estofado de ternera",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Ternera","cantidad":500,"unidad":"g"},
+{"nombre":"Zanahoria","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":25,
+"nombre":"Costillas al horno",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Costillas","cantidad":700,"unidad":"g"},
+{"nombre":"Patatas","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":26,
+"nombre":"Musaka",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Berenjena","cantidad":2,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":27,
+"nombre":"Pollo al ajillo",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pollo","cantidad":600,"unidad":"g"},
+{"nombre":"Ajos","cantidad":6,"unidad":"ud"}
+]
+},
+{
+"id":28,
+"nombre":"Fabada asturiana",
+"categoria":"legumbres",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Fabes","cantidad":350,"unidad":"g"},
+{"nombre":"Compango","cantidad":250,"unidad":"g"}
+]
+},
+{
+"id":29,
+"nombre":"Alubias rojas",
+"categoria":"legumbres",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Alubias rojas","cantidad":350,"unidad":"g"},
+{"nombre":"Chorizo","cantidad":150,"unidad":"g"}
+]
+},
+{
+"id":30,
+"nombre":"Pasta pesto",
+"categoria":"pasta",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pasta","cantidad":250,"unidad":"g"},
+{"nombre":"Salsa pesto","cantidad":100,"unidad":"g"}
+]
+},
+{
+"id":31,
+"nombre":"Pasta carbonara tradicional",
+"categoria":"pasta",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Espaguetis","cantidad":250,"unidad":"g"},
+{"nombre":"Huevos","cantidad":3,"unidad":"ud"},
+{"nombre":"Queso parmesano","cantidad":100,"unidad":"g"}
+]
+},
+{
+"id":32,
+"nombre":"Canelones de carne",
+"categoria":"pasta",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Canelones","cantidad":12,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":350,"unidad":"g"}
+]
+},
+{
+"id":33,
+"nombre":"Risotto de champiñones",
+"categoria":"arroz",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Arroz arborio","cantidad":250,"unidad":"g"},
+{"nombre":"Champiñones","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":34,
+"nombre":"Pollo tikka masala",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pollo","cantidad":500,"unidad":"g"},
+{"nombre":"Salsa tikka","cantidad":250,"unidad":"g"}
+]
+},
+{
+"id":35,
+"nombre":"Carrilleras al vino",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Carrilleras","cantidad":600,"unidad":"g"},
+{"nombre":"Vino tinto","cantidad":250,"unidad":"ml"}
+]
+},
+{
+"id":36,
+"nombre":"Rabo guisado",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Rabo de ternera","cantidad":700,"unidad":"g"},
+{"nombre":"Zanahoria","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":37,
+"nombre":"Atún encebollado",
+"categoria":"pescado",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Atún","cantidad":450,"unidad":"g"},
+{"nombre":"Cebolla","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":38,
+"nombre":"Lubina al horno",
+"categoria":"pescado",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Lubina","cantidad":500,"unidad":"g"},
+{"nombre":"Patatas","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":39,
+"nombre":"Dorada a la espalda",
+"categoria":"pescado",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Dorada","cantidad":500,"unidad":"g"},
+{"nombre":"Ajos","cantidad":4,"unidad":"ud"}
+]
+},
+{
+"id":40,
+"nombre":"Sepia con arroz",
+"categoria":"pescado",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Sepia","cantidad":400,"unidad":"g"},
+{"nombre":"Arroz","cantidad":250,"unidad":"g"}
+]
+},
+{
+"id":41,
+"nombre":"Conejo al ajillo",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Conejo","cantidad":600,"unidad":"g"},
+{"nombre":"Ajos","cantidad":6,"unidad":"ud"}
+]
+},
+{
+"id":42,
+"nombre":"Pimientos rellenos",
+"categoria":"verduras",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pimientos","cantidad":4,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":43,
+"nombre":"Berenjenas rellenas",
+"categoria":"verduras",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Berenjenas","cantidad":2,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":44,
+"nombre":"Calabacines rellenos",
+"categoria":"verduras",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Calabacines","cantidad":2,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":45,
+"nombre":"Chili con carne",
+"categoria":"legumbres",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Carne picada","cantidad":350,"unidad":"g"},
+{"nombre":"Alubias rojas","cantidad":250,"unidad":"g"}
+]
+},
+{
+"id":46,
+"nombre":"Hamburguesas caseras",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Carne picada","cantidad":400,"unidad":"g"},
+{"nombre":"Pan hamburguesa","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":47,
+"nombre":"Pollo teriyaki",
+"categoria":"carne",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pollo","cantidad":500,"unidad":"g"},
+{"nombre":"Salsa teriyaki","cantidad":150,"unidad":"ml"}
+]
+},
+{
+"id":48,
+"nombre":"Arroz con costillas",
+"categoria":"arroz",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Arroz","cantidad":250,"unidad":"g"},
+{"nombre":"Costillas","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":49,
+"nombre":"Paella de marisco",
+"categoria":"arroz",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Arroz","cantidad":250,"unidad":"g"},
+{"nombre":"Marisco surtido","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":50,
+"nombre":"Lasaña de verduras",
+"categoria":"verduras",
+"tipo":"comida",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Placas de lasaña","cantidad":12,"unidad":"ud"},
+{"nombre":"Verduras","cantidad":500,"unidad":"g"}
 ]
 },
 {
@@ -271,5 +614,437 @@
 {"nombre":"Pan de molde","cantidad":4,"unidad":"rebanadas"},
 {"nombre":"Jamón york","cantidad":4,"unidad":"lonchas"}
 ]
+},
+{
+"id":106,
+"nombre":"Tortilla de patata",
+"categoria":"huevos",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Huevos","cantidad":6,"unidad":"ud"},
+{"nombre":"Patatas","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":107,
+"nombre":"Tortilla de calabacín",
+"categoria":"huevos",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Huevos","cantidad":6,"unidad":"ud"},
+{"nombre":"Calabacín","cantidad":350,"unidad":"g"}
+]
+},
+{
+"id":108,
+"nombre":"Ensalada de atún",
+"categoria":"ensalada",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Lechuga","cantidad":1,"unidad":"ud"},
+{"nombre":"Atún","cantidad":2,"unidad":"latas"}
+]
+},
+{
+"id":109,
+"nombre":"Ensalada campera",
+"categoria":"ensalada",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Patatas","cantidad":500,"unidad":"g"},
+{"nombre":"Atún","cantidad":2,"unidad":"latas"}
+]
+},
+{
+"id":110,
+"nombre":"Gazpacho",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Tomate","cantidad":1000,"unidad":"g"},
+{"nombre":"Pepino","cantidad":1,"unidad":"ud"}
+]
+},
+{
+"id":111,
+"nombre":"Salmorejo",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Tomate","cantidad":1000,"unidad":"g"},
+{"nombre":"Pan","cantidad":200,"unidad":"g"}
+]
+},
+{
+"id":112,
+"nombre":"Merluza a la plancha",
+"categoria":"pescado",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Merluza","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":113,
+"nombre":"Salmón a la plancha",
+"categoria":"pescado",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Salmón","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":114,
+"nombre":"Sepia a la plancha",
+"categoria":"pescado",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Sepia","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":115,
+"nombre":"Gambas al ajillo",
+"categoria":"pescado",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Gambas","cantidad":350,"unidad":"g"},
+{"nombre":"Ajos","cantidad":6,"unidad":"ud"}
+]
+},
+{
+"id":116,
+"nombre":"Pechuga de pollo a la plancha",
+"categoria":"carne",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pechuga de pollo","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":117,
+"nombre":"Wrap de pollo",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Tortillas trigo","cantidad":4,"unidad":"ud"},
+{"nombre":"Pollo","cantidad":250,"unidad":"g"}
+]
+},
+{
+"id":118,
+"nombre":"Quesadillas",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Tortillas trigo","cantidad":4,"unidad":"ud"},
+{"nombre":"Queso rallado","cantidad":200,"unidad":"g"}
+]
+},
+{
+"id":119,
+"nombre":"Bocadillo de tortilla",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pan","cantidad":2,"unidad":"ud"},
+{"nombre":"Tortilla","cantidad":1,"unidad":"ud"}
+]
+},
+{
+"id":120,
+"nombre":"Bocadillo de atún",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pan","cantidad":2,"unidad":"ud"},
+{"nombre":"Atún","cantidad":2,"unidad":"latas"}
+]
+},
+{
+"id":121,
+"nombre":"Pizza casera",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Base pizza","cantidad":1,"unidad":"ud"},
+{"nombre":"Queso","cantidad":200,"unidad":"g"}
+]
+},
+{
+"id":122,
+"nombre":"Hamburguesa casera",
+"categoria":"carne",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Carne hamburguesa","cantidad":300,"unidad":"g"},
+{"nombre":"Pan hamburguesa","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":123,
+"nombre":"Crema de zanahoria",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Zanahoria","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":124,
+"nombre":"Sopa de verduras",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Verduras","cantidad":500,"unidad":"g"}
+]
+},
+{
+"id":125,
+"nombre":"Sopa de pollo",
+"categoria":"carne",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pollo","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":126,
+"nombre":"Pisto con huevo",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pisto","cantidad":500,"unidad":"g"},
+{"nombre":"Huevos","cantidad":4,"unidad":"ud"}
+]
+},
+{
+"id":127,
+"nombre":"Huevos rellenos",
+"categoria":"huevos",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Huevos","cantidad":6,"unidad":"ud"},
+{"nombre":"Atún","cantidad":2,"unidad":"latas"}
+]
+},
+{
+"id":128,
+"nombre":"Tostas de salmón",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pan","cantidad":4,"unidad":"rebanadas"},
+{"nombre":"Salmón ahumado","cantidad":150,"unidad":"g"}
+]
+},
+{
+"id":129,
+"nombre":"Tostas de aguacate",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pan","cantidad":4,"unidad":"rebanadas"},
+{"nombre":"Aguacate","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":130,
+"nombre":"Ensalada griega",
+"categoria":"ensalada",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Lechuga","cantidad":1,"unidad":"ud"},
+{"nombre":"Queso feta","cantidad":150,"unidad":"g"}
+]
+},
+{
+"id":131,
+"nombre":"Ensalada caprese",
+"categoria":"ensalada",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Mozzarella","cantidad":250,"unidad":"g"},
+{"nombre":"Tomate","cantidad":400,"unidad":"g"}
+]
+},
+{
+"id":132,
+"nombre":"Hummus con crudités",
+"categoria":"vegetariana",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Hummus","cantidad":200,"unidad":"g"},
+{"nombre":"Zanahorias","cantidad":3,"unidad":"ud"}
+]
+},
+{
+"id":133,
+"nombre":"Revuelto de gambas",
+"categoria":"huevos",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Huevos","cantidad":4,"unidad":"ud"},
+{"nombre":"Gambas","cantidad":200,"unidad":"g"}
+]
+},
+{
+"id":134,
+"nombre":"Revuelto de ajetes",
+"categoria":"huevos",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Huevos","cantidad":4,"unidad":"ud"},
+{"nombre":"Ajetes","cantidad":200,"unidad":"g"}
+]
+},
+{
+"id":135,
+"nombre":"Crema de verduras",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Verduras variadas","cantidad":700,"unidad":"g"}
+]
+},
+{
+"id":136,
+"nombre":"Puré de verduras",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Verduras variadas","cantidad":700,"unidad":"g"}
+]
+},
+{
+"id":137,
+"nombre":"Pollo al limón",
+"categoria":"carne",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pollo","cantidad":400,"unidad":"g"},
+{"nombre":"Limón","cantidad":2,"unidad":"ud"}
+]
+},
+{
+"id":138,
+"nombre":"Nuggets caseros",
+"categoria":"carne",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pechuga de pollo","cantidad":500,"unidad":"g"},
+{"nombre":"Pan rallado","cantidad":100,"unidad":"g"}
+]
+},
+{
+"id":139,
+"nombre":"Empanadillas al horno",
+"categoria":"rápida",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Obleas","cantidad":12,"unidad":"ud"},
+{"nombre":"Atún","cantidad":2,"unidad":"latas"}
+]
+},
+{
+"id":140,
+"nombre":"Quiche de verduras",
+"categoria":"verduras",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Masa quebrada","cantidad":1,"unidad":"ud"},
+{"nombre":"Verduras","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":141,
+"nombre":"Frittata italiana",
+"categoria":"huevos",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Huevos","cantidad":6,"unidad":"ud"},
+{"nombre":"Queso","cantidad":100,"unidad":"g"}
+]
+},
+{
+"id":142,
+"nombre":"Ensalada de pasta",
+"categoria":"ensalada",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Pasta","cantidad":200,"unidad":"g"},
+{"nombre":"Atún","cantidad":2,"unidad":"latas"}
+]
+},
+{
+"id":143,
+"nombre":"Ensalada de arroz",
+"categoria":"ensalada",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Arroz","cantidad":200,"unidad":"g"},
+{"nombre":"Maíz","cantidad":150,"unidad":"g"}
+]
+},
+{
+"id":144,
+"nombre":"Tacos de pollo",
+"categoria":"mexicana",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Tortillas maíz","cantidad":6,"unidad":"ud"},
+{"nombre":"Pollo","cantidad":300,"unidad":"g"}
+]
+},
+{
+"id":145,
+"nombre":"Burritos",
+"categoria":"mexicana",
+"tipo":"cena",
+"raciones":2,
+"ingredientes":[
+{"nombre":"Tortillas trigo","cantidad":4,"unidad":"ud"},
+{"nombre":"Carne picada","cantidad":300,"unidad":"g"}
+]
 }
 ]
+  
